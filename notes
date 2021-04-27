@@ -1,0 +1,5 @@
+// install typescript globallz
+npm install -g typescript
+
+// check more info on:
+www.typescript.org/Handbook
