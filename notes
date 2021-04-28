@@ -3,3 +3,21 @@ npm install -g typescript
 
 // check more info on:
 www.typescript.org/Handbook
+
+// To compile a ts file
+tsc myTypeScript.ts
+
+// To compile more ts files together:
+tsc util.ts timesTwo.ts --out util.js
+
+// To run a javascript locally
+node myJavascript.js
+
+// grunt-ts:
+https://www.npmjs.com/package/grunt-ts
+steps:
+- npm init
+- npm install typescript --save
+- npm install grunt --save
+- npm install grunt-cli --save
+- npm install grunt-ts --save
