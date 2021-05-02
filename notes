@@ -21,3 +21,12 @@ steps:
 - npm install grunt --save
 - npm install grunt-cli --save
 - npm install grunt-ts --save
+
+// extra plugins for vscode:
+- ES7 React/Redux/Graphql:
+  - shortcuts:
+    - rfc: react functional component
+    - clg: console.log()
+- FireCode font special mathematical signs instead of  === or !==
+- Import cost shows to imprt size in kb
+- Prettier: ctrl + shift + p
