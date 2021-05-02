@@ -30,3 +30,16 @@ steps:
 - FireCode font special mathematical signs instead of  === or !==
 - Import cost shows to imprt size in kb
 - Prettier: ctrl + shift + p
+
+// create react-app with ts:
+- npm i create-react-app // create react app
+- npx create-react-app my-app-ts // install dependencies, packages, create sources
+- npm i typescript @types/node @types/react @types/react-dom
+
+// creae react-app with ts:
+- create new project dir and go into it
+- npm init -y // init default project (in created project dir: package.json)
+- create empty src folder with index.tsx file
+- create .bablerc, index.html, webpack.config.js
+- add basic settings and content
+- npm i @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript webpack webpack-cli webpack-dev-server babel-loader react react-dom @types/react @types/react-dom
