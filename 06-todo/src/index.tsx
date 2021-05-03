@@ -1,11 +1,24 @@
-import React from 'react'
+import React, {Fragment, useState} from 'react'
 import ReactDOM from 'react-dom'
 
+type FormElement = React.FormEvent<HTMLFormElement>
+
 export default function App(): JSX.Element {
+  const [value, setValue] = useState<string>("")
+  
+  const handleSubmit = (e: FormElement): void => {
+    e.preventDefault()
+    setValue("")
+  }
+
   return (
-    <h1>
-      Hello!!
-    </h1>
+    <Fragment>
+      <h1>Todo list</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={value} onChange={e => setValue(e.target.value)} required />
+        <button type="submit">Add Todo</button>
+      </form>
+    </Fragment>
   )
 }
 
