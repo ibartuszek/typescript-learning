@@ -43,3 +43,7 @@ steps:
 - create .bablerc, index.html, webpack.config.js
 - add basic settings and content
 - npm i @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript webpack webpack-cli webpack-dev-server babel-loader react react-dom @types/react @types/react-dom
+
+// router:
+- https://reach.tech/router/
+- https://github.com/reach/router
