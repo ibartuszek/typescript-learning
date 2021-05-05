@@ -19,18 +19,37 @@ export default function App(): JSX.Element {
     })
   }
   
-  const toggleFavAction = (episode: IEpisode): IAction => dispatch({
-    type: "ADD_FAV",
-    payload: episode
-  })
+  const toggleFavAction = (episode: IEpisode): IAction => {
+    let dispatchObj 
+    if (isEpisodeInFav(episode)) {
+      const favWithoutEpisode = state.favourites.filter((fav: IEpisode) => fav.id !== episode.id)
+      dispatchObj = {
+        type: "REMOVE_FAV",
+        payload: favWithoutEpisode
+      }
+    } else {
+      dispatchObj = {
+        type: "ADD_FAV",
+        payload: episode
+      }
+    }
+    return dispatch(dispatchObj)
+  }
+
+  const isEpisodeInFav = (episode: IEpisode): boolean => state.favourites.includes(episode)
 
   console.log(state)
 
   return (
     <React.Fragment>
       <header className="header">
-        <h1>Rick and Morty</h1>
-        <p>Pick your favourite episode!!!</p>
+        <div>
+          <h1>Rick and Morty</h1>
+          <p>Pick your favourite episode!!!</p>
+        </div>
+        <div>
+          Favourite(s): {state.favourites.length}
+        </div>
       </header>
       <section className="episode-layout">
         {state.episodes.map((episode: IEpisode) => {
@@ -44,7 +63,9 @@ export default function App(): JSX.Element {
               <div>{episode.name}</div>
               <section>
                 <div>Season: {episode.season} Number: {episode.number}</div>
-                <button type="button" onClick={() => toggleFavAction(episode)}>Favourite</button>
+                <button type="button" onClick={() => toggleFavAction(episode)}>
+                  {isEpisodeInFav(episode) ? "Unfav" : "Fav"}
+                </button>
               </section>
             </section>
           )
