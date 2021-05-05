@@ -16,7 +16,8 @@ export default function HomePage() {
     episodes: state.episodes,
     store: {state, dispatch},
     toggleFavAction,
-    isEpisodeInFav
+    isEpisodeInFav,
+    favourites: state.favourites
   }
 
   return (
