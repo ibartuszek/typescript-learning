@@ -20,8 +20,9 @@ export interface IEpisode {
 
 export interface IEpisodeProps {
   episodes: IEpisode[],
-  toggleFavAction: (episode: IEpisode) => IAction,
-  isEpisodeInFav: (episode: IEpisode) => boolean
+  store: {state: IState, dispatch: any}
+  toggleFavAction: (state: IState, dispatch: any, episode: IEpisode) => IAction,
+  isEpisodeInFav: (state: IState, episode: IEpisode) => boolean
 }
 
 export interface IState {
