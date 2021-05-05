@@ -18,6 +18,12 @@ export interface IEpisode {
   url: string
 }
 
+export interface IEpisodeProps {
+  episodes: IEpisode[],
+  toggleFavAction: (episode: IEpisode) => IAction,
+  isEpisodeInFav: (episode: IEpisode) => boolean
+}
+
 export interface IState {
   episodes: Array<IEpisode>,
   favourites: Array<IEpisode>
